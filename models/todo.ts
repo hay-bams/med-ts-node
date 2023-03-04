@@ -9,10 +9,7 @@ interface todoModelInterface extends mongoose.Model<TodoDoc> {
   build(attr: ITodo): TodoDoc
 }
 
-interface TodoDoc extends mongoose.Document {
-  title: string;
-  description: string;
-}
+interface TodoDoc extends mongoose.Document, ITodo {}
 
 const todoSchema = new mongoose.Schema({
   title: {
